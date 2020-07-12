@@ -1,0 +1,94 @@
+---
+layout: post
+title:  "windows下安装Jekyll"
+date:   2020-07-12 21:10:05 +0800
+categories: install jekyll
+---
+
+# windows下安装Jekyll
+
+## 安装Ruby+devkit
+
+首先点击下载安装[Ruby installer](https://rubyinstaller.org/downloads/ )，安装目录不用带空格，不能放到Program File下面。
+
+ [Ruby+Devkit 2.7.1-1 (x64)](https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-2.7.1-1/rubyinstaller-devkit-2.7.1-1-x64.exe)
+
+不要勾选`ridk install`的选项，后面再手动安装
+
+执行下面脚本看ruby是否安装成功
+
+```ruby
+ruby -v
+```
+
+安装msys2后，在F:\software\Ruby27-x64\msys64\etc\pacman.d\ 目录下修改这个几个文件添加对应的镜像地址：
+
+```txt
+mirrorlist.mingw32
+Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/mingw/i686/
+
+mirrorlist.mingw64
+Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/mingw/x86_64/
+
+mirrorlist.msys
+Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/msys/$arch/
+```
+
+在F:\software\Ruby27-x64\bin 目录下执行
+
+```
+ridk.cmd install
+```
+
+## 安装bundler
+
+```undefined
+gem install bundler
+```
+
+## 安装jekyll
+
+```undefined
+gem install jekyll
+```
+
+检查jekyll是否安装成功
+
+```undefined
+jekyll -v
+```
+
+jekyll 4.1.1
+
+## 使用jekyll创建简单的博客
+
+#### 创建博客
+
+输入命令：
+
+```cpp
+jekyll new myblog
+```
+
+#### 本地运行博客
+
+切换到`myblog`目录下，输入如下命令
+
+```bash
+jekyll server
+```
+
+然后在浏览器中打开 http://localhost:4000 即可访问
+
+# 常见问题
+
+Bundler could not find compatible versions for gem “bundler”: In Gemfile
+
+原因是bundler version 2.1.4, 但是这个jekyll主题用的bundler version 1.12。所以要降级：
+
+```powershell
+$ gem install bundler -v 1.12
+$ bundle _1.12_ install
+```
+
+https://blog.csdn.net/qq_24395387/article/details/103893917
