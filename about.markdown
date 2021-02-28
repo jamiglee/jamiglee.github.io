@@ -10,3 +10,11 @@ permalink: /about/
 - 现就职于华为，曾从事华为内部供应链计划系统开发维护、U2000系统开发。
 - 目前从事OWS产品软件的开发，DIM特性的开发PL。
 - 爱好：读书，无人机摄影
+
+
+
+GitHub：[jamiglee](https://jamiglee.github.io/)
+
+豆瓣：[jamig](https://www.douban.com/people/jamig/)
+
+微博：[jamig](https://weibo.com/jamig)
